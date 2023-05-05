@@ -1,20 +1,20 @@
 class MenuItem {
-  MenuItem({
-    required this.imagePath,
-    required this.stars,
-    required this.name,
-    required this.time,
-    required this.reviews,
-    required this.price,
-    required this.cook,
-    required this.isSpecials,
-    required this.isPopular,
-    required this.isNewest,
-    required this.isMilkBased,
-    required this.isCocktail,
-    required this.hasAlcohol,
-    required this.isDrink
-  });
+  MenuItem(
+      {required this.imagePath,
+      required this.stars,
+      required this.name,
+      required this.time,
+      required this.reviews,
+      required this.price,
+      required this.cook,
+      required this.isSpecials,
+      required this.isPopular,
+      required this.isNewest,
+      required this.isMilkBased,
+      required this.isCocktail,
+      required this.hasAlcohol,
+      required this.isDrink,
+      this.isFavorite = false});
 
   final String imagePath;
   final int stars;
@@ -30,6 +30,7 @@ class MenuItem {
   final bool isCocktail;
   final bool hasAlcohol;
   final bool isDrink;
+  final bool isFavorite;
 
 // MenuItem MenuItemFromJson(String str) => MenuItem.fromJson(json.decode(str));
 // String MenuItemToJson(MenuItem data) => json.encode(data.toJson());

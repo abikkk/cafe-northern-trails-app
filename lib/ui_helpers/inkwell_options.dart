@@ -1,3 +1,4 @@
+import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 
 class InkwellOptions extends StatefulWidget {
@@ -24,14 +25,14 @@ class _InkwellOptionsState extends State<InkwellOptions> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color:
-              widget.isSelected ? const Color(0xFF944dff) : Colors.transparent,
-          border: Border.all(width: 1, color: const Color(0xFF944dff)),
+              widget.isSelected ?  AppThemeData.appTheme.primaryColor : Colors.transparent,
+          border: Border.all(width: 1, color: AppThemeData.appTheme.primaryColor),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Text(
           widget.label,
           style: TextStyle(
-              color: widget.isSelected ? Colors.white : const Color(0xFF944dff),
+              color: widget.isSelected ? Colors.white : AppThemeData.appTheme.primaryColor,
               fontWeight: FontWeight.bold,
               fontSize: 14),
         ),

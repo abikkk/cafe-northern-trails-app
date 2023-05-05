@@ -1,9 +1,9 @@
-import 'package:Cafe_Northern_Trails/screens/menu_view.dart';
+import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
+import 'package:Cafe_Northern_Trails/utils/string_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../models/menu_item.dart';
 import '../ui_helpers/featured_section.dart';
-import '../utils/string_utils.dart';
 import '../ui_helpers/card_image_small.dart';
 import '../ui_helpers/inkwell_options.dart';
 import '../ui_helpers/navbar.dart';
@@ -36,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
         time: '4-5',
         reviews: '40+',
         price: 0.9,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: true,
         isNewest: false,
@@ -66,7 +66,7 @@ class _HomeViewState extends State<HomeView> {
         time: '3-5',
         reviews: '50+',
         price: 1.2,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: true,
         isNewest: false,
@@ -111,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
         time: '3-5',
         reviews: '50+',
         price: 1.2,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: false,
         isNewest: true,
@@ -126,7 +126,7 @@ class _HomeViewState extends State<HomeView> {
         time: '2-3',
         reviews: '60+',
         price: 0.7,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: true,
         isNewest: false,
@@ -141,7 +141,7 @@ class _HomeViewState extends State<HomeView> {
         time: '5-6',
         reviews: '40+',
         price: 1.2,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: false,
         isNewest: false,
@@ -156,7 +156,7 @@ class _HomeViewState extends State<HomeView> {
         time: '7-8',
         reviews: '50+',
         price: 1.6,
-        cook: '--',
+        cook: '',
         isSpecials: true,
         isPopular: true,
         isNewest: false,
@@ -171,7 +171,7 @@ class _HomeViewState extends State<HomeView> {
         time: '3-5',
         reviews: '50+',
         price: 1.0,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: false,
         isNewest: false,
@@ -201,7 +201,7 @@ class _HomeViewState extends State<HomeView> {
         time: '3-5',
         reviews: '24+',
         price: 1.3,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: true,
         isNewest: false,
@@ -216,7 +216,7 @@ class _HomeViewState extends State<HomeView> {
         time: '3-5',
         reviews: '24+',
         price: 1.8,
-        cook: '--',
+        cook: '',
         isSpecials: false,
         isPopular: true,
         isNewest: false,
@@ -262,7 +262,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: const Color(0xFF944dff),
+        // backgroundColor: const Color(0xFF944dff),
         elevation: 8,
         title: Padding(
           padding:
@@ -371,20 +371,12 @@ class _HomeViewState extends State<HomeView> {
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // SUB TEXTS
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
-                        'Featured Specials',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      Text(
-                        'See all',
-                      ),
-                    ],
+                  Text(
+                    'Featured Specials',
+                    style: AppThemeData.appTheme.textTheme.titleMedium,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -406,13 +398,12 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Menu',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                          style: AppThemeData.appTheme.textTheme.titleMedium,
                         ),
-                        Text(
+                        const Text(
                           'See all',
                         ),
                       ],
@@ -430,7 +421,6 @@ class _HomeViewState extends State<HomeView> {
                               courseSelection = 0;
                               filteredItems = items;
                             });
-                            debugPrint(filteredItems.length.toString());
                           },
                           isSelected: courseSelection == 0),
                       InkwellOptions(
@@ -442,7 +432,6 @@ class _HomeViewState extends State<HomeView> {
                                   .where((element) => element.isPopular)
                                   .toList();
                             });
-                            debugPrint(filteredItems.length.toString());
                           },
                           isSelected: courseSelection == 1),
                       InkwellOptions(
@@ -454,7 +443,6 @@ class _HomeViewState extends State<HomeView> {
                                   .where((element) => element.isNewest)
                                   .toList();
                             });
-                            debugPrint(filteredItems.length.toString());
                           },
                           isSelected: courseSelection == 2),
                       InkwellOptions(
@@ -466,7 +454,6 @@ class _HomeViewState extends State<HomeView> {
                                   .where((element) => element.isMilkBased)
                                   .toList();
                             });
-                            debugPrint(filteredItems.length.toString());
                           },
                           isSelected: courseSelection == 3),
                     ],
@@ -493,81 +480,79 @@ class _HomeViewState extends State<HomeView> {
       ),
 
       // MIDDLE DOCKED FLOATING BUTTON
-      floatingActionButton: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: const Color(0xFF944dff),
-          border: Border.all(width: 1, color: const Color(0xFF944dff)),
-          borderRadius: const BorderRadius.all(
-              Radius.circular(StringUtils.containerBorderRadiusSmall)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 4,
-              offset: const Offset(0, 2), // changes position of shadow
-            ),
-          ],
-        ),
-        child: IconButton(
-          onPressed: () {
-            Get.toNamed(MenuView());
-          },
-          icon: const Icon(
-            Icons.list,
-            // size: 44,
-            color: Colors.white,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: Container(
+      //   padding: const EdgeInsets.all(8),
+      //   decoration: BoxDecoration(
+      //     color: const Color(0xFF944dff),
+      //     border: Border.all(width: 1, color: const Color(0xFF944dff)),
+      //     borderRadius: const BorderRadius.all(
+      //         Radius.circular(StringUtils.containerBorderRadiusSmall)),
+      //     boxShadow: [
+      //       BoxShadow(
+      //         color: Colors.grey.withOpacity(0.5),
+      //         spreadRadius: 2,
+      //         blurRadius: 4,
+      //         offset: const Offset(0, 2), // changes position of shadow
+      //       ),
+      //     ],
+      //   ),
+      //   child: IconButton(
+      //     onPressed: () {
+      //       Get.toNamed('/home');
+      //     },
+      //     icon: const Icon(
+      //       Icons.list,
+      //       // size: 44,
+      //       color: Colors.white,
+      //     ),
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       // BOTTOM NAVIGATION BAR
-      bottomNavigationBar: Container(
-          child: Padding(
+      bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             NavBarIcons(
               callBack: () {
-                setState(() {
-                  navSelection = 0;
-                });
+                Get.toNamed(StringUtils.routeHome);
+                // setState(() {
+                //   navSelection = 0;
+                // });
               },
               iconData: Icons.home,
               isSelected: navSelection == 0 ? true : false,
             ),
             NavBarIcons(
                 callBack: () {
-                  setState(() {
-                    navSelection = 1;
-                  });
+                  // setState(() {
+                  //   navSelection = 1;
+                  // });
                 },
                 isSelected: navSelection == 1 ? true : false,
                 iconData: Icons.favorite),
-            const SizedBox(
-              width: 20,
-            ),
             NavBarIcons(
                 callBack: () {
-                  setState(() {
-                    navSelection = 2;
-                  });
+                  Get.toNamed(StringUtils.routeContact);
+                  // setState(() {
+                  //   navSelection = 2;
+                  // });
                 },
                 isSelected: navSelection == 2 ? true : false,
-                iconData: Icons.message),
-            NavBarIcons(
-                callBack: () {
-                  setState(() {
-                    navSelection = 3;
-                  });
-                },
-                isSelected: navSelection == 3 ? true : false,
-                iconData: Icons.person),
+                iconData: Icons.contact_phone),
+            // NavBarIcons(
+            //     callBack: () {
+            //       setState(() {
+            //         navSelection = 3;
+            //       });
+            //     },
+            //     isSelected: navSelection == 3 ? true : false,
+            //     iconData: Icons.person),
           ],
         ),
-      )),
+      ),
     );
   }
 }

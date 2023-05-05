@@ -1,3 +1,4 @@
+import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import '../ui_helpers/review_stars.dart';
 import '../models/menu_item.dart';
@@ -51,10 +52,15 @@ class _SpecialSectionState extends State<SpecialSection> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.favorite_border,
-                                  color: Color(0xFF944dff),
+                                onPressed: () {
+                                  // setState(() {
+                                  //   widget.item.isFavorite = true;
+                                  // });
+                                },
+                                icon: Icon(
+                                  (widget.item.isFavorite)
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
                                 ))
                           ],
                         ),
@@ -90,10 +96,11 @@ class _SpecialSectionState extends State<SpecialSection> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Icon(Icons.account_box),
+                                  const Icon(Icons.account_box),
                                   Text(
                                     widget.item.cook,
-                                    style: TextStyle(fontSize: 10),
+                                    style: AppThemeData
+                                        .appTheme.textTheme.bodyMedium,
                                   ),
                                 ],
                               ),
@@ -122,8 +129,8 @@ class _SpecialSectionState extends State<SpecialSection> {
                               ),
                               child: Text(
                                 '\$ ${widget.item.price.toStringAsFixed(2)}',
-                                style: TextStyle(
-                                    fontSize: 10, color: Color(0xFF944dff)),
+                                style:
+                                    AppThemeData.appTheme.textTheme.bodyMedium,
                               ),
                             )
                           ],
@@ -140,13 +147,11 @@ class _SpecialSectionState extends State<SpecialSection> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ListTile(
                 title: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
                       child: Text(
                         widget.item.name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
+                        style: AppThemeData.appTheme.textTheme.titleMedium,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -156,7 +161,8 @@ class _SpecialSectionState extends State<SpecialSection> {
                           children: [
                             Text(
                               widget.item.stars.toString(),
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  AppThemeData.appTheme.textTheme.titleMedium,
                             ),
                             ReviewStars(star: widget.item.stars)
                           ]),

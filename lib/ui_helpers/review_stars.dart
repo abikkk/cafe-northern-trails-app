@@ -11,10 +11,9 @@ class _ReviewStarsState extends State<ReviewStars> {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      for (var i = 0; i < widget.star; i++)
-        const Icon(
-          Icons.star,
-          color: Color(0xFF944dff),
+      for (int i = 0; i < 5; i++)
+        Icon(
+          (i < widget.star) ? Icons.star : Icons.star_border,
         )
     ]);
   }

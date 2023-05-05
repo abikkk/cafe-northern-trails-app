@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/menu_item.dart';
+import '../utils/app_theme_data.dart';
 
 class SmallCardImageStack extends StatefulWidget {
   const SmallCardImageStack({super.key, required this.item});
@@ -43,26 +44,25 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8.0, vertical: 4),
                       child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite_border,
-                            color: Color(0xFF944dff),
-                          )),
-                    ),
+                        onPressed: () {},
+                        icon: Icon(
+                          (widget.item.isFavorite)
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          // color: Color(0xFF944dff),
+                        ),
+                      ),
+                    )
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      '\$ ${widget.item.name}',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 10, color: Color(0xFF944dff)),
-                    ),
-                    Text(
-                      '\$ ${widget.item.price.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 10, color: Color(0xFF944dff)),
-                    ),
+                    Text(widget.item.name,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppThemeData.appTheme.textTheme.bodyMedium),
+                    Text('\$ ${widget.item.price.toStringAsFixed(2)}',
+                        style: AppThemeData.appTheme.textTheme.bodyMedium),
                   ],
                 ),
               ],

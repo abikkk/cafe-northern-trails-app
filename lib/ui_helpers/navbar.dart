@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/app_theme_data.dart';
+
 class NavBarIcons extends StatefulWidget {
   const NavBarIcons(
       {super.key,
@@ -30,7 +32,7 @@ class _NavBarIconsState extends State<NavBarIcons> {
         child: Icon(
           widget.iconData,
           size: 30,
-          color: const Color(0xFF944dff),
+          color: AppThemeData.appTheme.primaryColor,
         ),
       ),
     );
