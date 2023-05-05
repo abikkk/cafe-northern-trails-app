@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import '../models/menu_item.dart';
 
 class SmallCardImageStack extends StatefulWidget {
-  const SmallCardImageStack({super.key,required this.imagePath});
+  const SmallCardImageStack({super.key, required this.item});
 
-  final String imagePath;
+  final MenuItem item;
   @override
   State<SmallCardImageStack> createState() => _SmallCardImageStackState();
 }
@@ -11,31 +12,64 @@ class SmallCardImageStack extends StatefulWidget {
 class _SmallCardImageStackState extends State<SmallCardImageStack> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(30.0),
-          child: Image(
-            height: MediaQuery.of(context).size.width / 2,
-            width: MediaQuery.of(context).size.width / 2,
-            image:  AssetImage(
-              widget.imagePath,
+    return Card(
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
+        height: MediaQuery.of(context).size.height / 3,
+        width: MediaQuery.of(context).size.height / 3,
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30.0),
+              child: Image(
+                height: MediaQuery.of(context).size.width / 2,
+                width: MediaQuery.of(context).size.width / 2,
+                image: AssetImage(
+                  widget.item.imagePath,
+                ),
+                fit: BoxFit.contain,
+              ),
             ),
-            fit: BoxFit.contain,
-          ),
-        ),
 
-        // FAVORITE ICON
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-          child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.favorite_border,
-                color: Color(0xFF944dff),
-              )),
+            // FAVORITE ICON
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 4),
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.favorite_border,
+                            color: Color(0xFF944dff),
+                          )),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '\$ ${widget.item.name}',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 10, color: Color(0xFF944dff)),
+                    ),
+                    Text(
+                      '\$ ${widget.item.price.toStringAsFixed(2)}',
+                      style: TextStyle(fontSize: 10, color: Color(0xFF944dff)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
