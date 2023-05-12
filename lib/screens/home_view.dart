@@ -1,4 +1,7 @@
+import 'package:Cafe_Northern_Trails/controllers/main_controller.dart';
+import 'package:Cafe_Northern_Trails/screens/menu_view.dart';
 import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
+import 'package:Cafe_Northern_Trails/utils/page_router.dart';
 import 'package:Cafe_Northern_Trails/utils/string_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +22,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int courseSelection = 0, navSelection = 0;
   List<MenuItem> items = [], filteredItems = [];
+  final MainController mainController = MainController();
 
   @override
   void initState() {
@@ -297,7 +301,7 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
         ),
-        actions: [
+        actions: const [
           // Container(
           //     margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
           //     width: 40,
@@ -378,9 +382,10 @@ class _HomeViewState extends State<HomeView> {
                     'Featured Specials',
                     style: AppThemeData.appTheme.textTheme.titleMedium,
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width,
+                    child: PageView(
+                      scrollDirection: Axis.horizontal,
                       children: [
                         for (int i = 0;
                             i <
@@ -462,9 +467,11 @@ class _HomeViewState extends State<HomeView> {
                   // CARD IMAGES
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 3,
+                      child: PageView(
+                        scrollDirection: Axis.horizontal,
+                        controller: mainController.cardController,
                         children: [
                           for (int i = 0; i < filteredItems.length; i++)
                             SmallCardImageStack(item: filteredItems[i]),
@@ -527,9 +534,8 @@ class _HomeViewState extends State<HomeView> {
             ),
             NavBarIcons(
                 callBack: () {
-                  // setState(() {
-                  //   navSelection = 1;
-                  // });
+                  PageRouter.instance
+                      .openActivity(context, MenuView(items: items));
                 },
                 isSelected: navSelection == 1 ? true : false,
                 iconData: Icons.favorite),

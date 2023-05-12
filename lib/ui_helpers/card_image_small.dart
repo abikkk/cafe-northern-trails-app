@@ -14,6 +14,7 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 10,
       child: Container(
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(10),
@@ -27,7 +28,7 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
                 height: MediaQuery.of(context).size.width / 2,
                 width: MediaQuery.of(context).size.width / 2,
                 image: AssetImage(
-                  widget.item.imagePath,
+                  'assets/${widget.item.imagePath}',
                 ),
                 fit: BoxFit.contain,
               ),
@@ -56,13 +57,23 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(widget.item.name,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppThemeData.appTheme.textTheme.bodyMedium),
-                    Text('\$ ${widget.item.price.toStringAsFixed(2)}',
-                        style: AppThemeData.appTheme.textTheme.bodyMedium),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(widget.item.name,
+                            overflow: TextOverflow.ellipsis,
+                            style:
+                                AppThemeData.appTheme.textTheme.displayMedium),
+                        Text('${widget.item.time} minutes',
+                            overflow: TextOverflow.ellipsis,
+                            style: AppThemeData.appTheme.textTheme.bodyMedium),
+                        Text('\$ ${widget.item.price.toStringAsFixed(2)}',
+                            style: AppThemeData.appTheme.textTheme.bodyMedium),
+                      ],
+                    ),
                   ],
                 ),
               ],

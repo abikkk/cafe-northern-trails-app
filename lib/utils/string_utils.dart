@@ -6,5 +6,6 @@ class StringUtils {
   static const double containerBorderRadiusSmall = 10.00;
 
   static const String routeHome = '/home';
+  static const String routeMenu = '/menu_view';
   static const String routeContact = '/contact';
 }

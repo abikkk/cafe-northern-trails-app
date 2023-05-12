@@ -16,16 +16,16 @@ class SpecialSection extends StatefulWidget {
 class _SpecialSectionState extends State<SpecialSection> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.all(4),
-      width: MediaQuery.of(context).size.width / 1.1,
       child: Card(
+        elevation: 10,
         child: Column(
           children: [
             // CARD
             Container(
               margin: const EdgeInsets.all(20),
-              height: MediaQuery.of(context).size.height / 2.8,
+              height: MediaQuery.of(context).size.height / 3,
               child: Stack(
                 children: <Widget>[
                   // CARD IMAGE
@@ -34,7 +34,7 @@ class _SpecialSectionState extends State<SpecialSection> {
                         BorderRadius.circular(StringUtils.imageBorderRadius),
                     child: Center(
                       child: Image(
-                        image: AssetImage(widget.item.imagePath),
+                        image: AssetImage('assets/${widget.item.imagePath}'),
                         fit: BoxFit.fill,
                       ),
                     ),
