@@ -408,8 +408,14 @@ class _HomeViewState extends State<HomeView> {
                           'Menu',
                           style: AppThemeData.appTheme.textTheme.titleMedium,
                         ),
-                        const Text(
-                          'See all',
+                        InkWell(
+                          onTap: () {
+                            PageRouter.instance
+                                .openActivity(context, MenuView(items: items));
+                          },
+                          child: const Text(
+                            'See all',
+                          ),
                         ),
                       ],
                     ),
@@ -532,13 +538,13 @@ class _HomeViewState extends State<HomeView> {
               iconData: Icons.home,
               isSelected: navSelection == 0 ? true : false,
             ),
-            NavBarIcons(
-                callBack: () {
-                  PageRouter.instance
-                      .openActivity(context, MenuView(items: items));
-                },
-                isSelected: navSelection == 1 ? true : false,
-                iconData: Icons.favorite),
+            // NavBarIcons(
+            //     callBack: () {
+            //       PageRouter.instance
+            //           .openActivity(context, MenuView(items: items));
+            //     },
+            //     isSelected: navSelection == 1 ? true : false,
+            //     iconData: Icons.favorite),
             NavBarIcons(
                 callBack: () {
                   Get.toNamed(StringUtils.routeContact);
