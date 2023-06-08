@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1edb048-4f0b-4b45-bdd8-edc7fc14aae7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/utils/app_colors.dart" afterDir="false" />
+    <list default="true" id="f1edb048-4f0b-4b45-bdd8-edc7fc14aae7" name="Changes" comment="UI changes:&#10;- drawer added for menu and favorites&#10;- font changed&#10;- theme color changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/card_image_small.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/card_image_small.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/featured_section.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/featured_section.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/inkwell_options.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/inkwell_options.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/review_stars.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/review_stars.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/app_theme_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/app_theme_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.iml" beforeDir="false" afterPath="$PROJECT_DIR$/template.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +57,14 @@
       <option name="presentableId" value="Default" />
       <updated>1686026487651</updated>
     </task>
+    <task id="LOCAL-00001" summary="UI changes:&#10;- drawer added for menu and favorites&#10;- font changed&#10;- theme color changed">
+      <created>1686203073006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686203073006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -86,5 +83,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="UI changes:&#10;- drawer added for menu and favorites&#10;- font changed&#10;- theme color changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI changes:&#10;- drawer added for menu and favorites&#10;- font changed&#10;- theme color changed" />
   </component>
 </project>
