@@ -13,6 +13,7 @@ import '../ui_helpers/navbar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key, required this.title, required this.subtitle});
+
   final String title, subtitle;
 
   @override
@@ -264,22 +265,46 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(
+        elevation: 10,
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30.0),
+              child: Image(
+                height: MediaQuery.of(context).size.width / 2,
+                // width: MediaQuery.of(context).size.width / 3,
+                image: const AssetImage(
+                  'assets/logo.png',
+                ),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          ListTile(
+            title: const Text('Menu'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Favorite'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      )),
       appBar: AppBar(
         toolbarHeight: 80,
-        // backgroundColor: const Color(0xFF944dff),
         elevation: 8,
         title: Padding(
           padding:
               const EdgeInsets.only(top: 20.0, right: 15, left: 15, bottom: 20),
           child: Row(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(right: 5.0),
-                child: Icon(
-                  Icons.account_box,
-                  size: 50,
-                ),
-              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -287,14 +312,14 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.only(bottom: 5.0),
                     child: Text(
                       widget.title,
-                      style: const TextStyle(
-                        fontSize: 18,
-                      ),
+                      style: AppThemeData.appTheme.textTheme.displayLarge!
+                          .copyWith(color: Colors.white),
                     ),
                   ),
                   Text(
                     widget.subtitle,
-                    style: const TextStyle(fontSize: 14, color: Colors.white60),
+                    style: AppThemeData.appTheme.textTheme.bodyLarge!
+                        .copyWith(color: Colors.white60),
                   ),
                 ],
               ),
@@ -380,7 +405,7 @@ class _HomeViewState extends State<HomeView> {
                   // SUB TEXTS
                   Text(
                     'Featured Specials',
-                    style: AppThemeData.appTheme.textTheme.titleMedium,
+                    style: AppThemeData.appTheme.textTheme.displayMedium,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.width,
@@ -398,7 +423,7 @@ class _HomeViewState extends State<HomeView> {
                       ],
                     ),
                   ),
-                  // OUR COUSES SECTION
+                  // OUR COURSES SECTION
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Row(
@@ -406,7 +431,7 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         Text(
                           'Menu',
-                          style: AppThemeData.appTheme.textTheme.titleMedium,
+                          style: AppThemeData.appTheme.textTheme.displayMedium,
                         ),
                         InkWell(
                           onTap: () {
@@ -457,7 +482,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                           isSelected: courseSelection == 2),
                       InkwellOptions(
-                          label: 'Milkbased',
+                          label: 'Milk-based',
                           callBack: () {
                             setState(() {
                               courseSelection = 3;

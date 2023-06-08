@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: StringUtils.routeHome,
           page: () => const HomeView(
-              title: 'Welcome to Northern Trails,',
-              subtitle: 'Hope your day gets better!'),
+              title: 'Northern Trails,',
+              subtitle: 'welcome'),
         ),
         GetPage(
           name: StringUtils.routeContact,

@@ -6,6 +6,7 @@ class SmallCardImageStack extends StatefulWidget {
   const SmallCardImageStack({super.key, required this.item});
 
   final MenuItem item;
+
   @override
   State<SmallCardImageStack> createState() => _SmallCardImageStackState();
 }
@@ -63,15 +64,29 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(widget.item.name,
-                            overflow: TextOverflow.ellipsis,
-                            style:
-                                AppThemeData.appTheme.textTheme.displayMedium),
                         Text('${widget.item.time} minutes',
                             overflow: TextOverflow.ellipsis,
-                            style: AppThemeData.appTheme.textTheme.bodyMedium),
-                        Text('\$ ${widget.item.price.toStringAsFixed(2)}',
-                            style: AppThemeData.appTheme.textTheme.bodyMedium),
+                            style: AppThemeData.appTheme.textTheme.bodyLarge),
+                        Padding(
+                          padding: const EdgeInsets.only(top:4.0,bottom: 2),
+                          child: Text('\$ ${widget.item.price.toStringAsFixed(2)}',
+                              style: AppThemeData.appTheme.textTheme.bodyLarge),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white70,
+                            border:
+                                Border.all(width: 1, color: Colors.transparent),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(10)),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 2, horizontal: 4),
+                          child: Text(widget.item.name,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppThemeData.appTheme.textTheme.titleLarge!
+                                  .copyWith(fontSize: 28)),
+                        ),
                       ],
                     ),
                   ],

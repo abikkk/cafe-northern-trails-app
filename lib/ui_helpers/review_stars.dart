@@ -10,10 +10,12 @@ class ReviewStars extends StatefulWidget {
 class _ReviewStarsState extends State<ReviewStars> {
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
+    return Row(
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
       for (int i = 0; i < 5; i++)
         Icon(
-          (i < widget.star) ? Icons.star : Icons.star_border,
+          (i < widget.star) ? Icons.star : Icons.star_border,size: 16,
         )
     ]);
   }

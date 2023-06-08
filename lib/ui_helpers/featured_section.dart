@@ -2,6 +2,7 @@ import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import '../ui_helpers/review_stars.dart';
 import '../models/menu_item.dart';
+import '../utils/app_colors.dart';
 import '../utils/string_utils.dart';
 import 'icon_label_pair.dart';
 
@@ -9,6 +10,7 @@ class SpecialSection extends StatefulWidget {
   const SpecialSection({super.key, required this.item});
 
   final MenuItem item;
+
   @override
   State<SpecialSection> createState() => _SpecialSectionState();
 }
@@ -96,11 +98,15 @@ class _SpecialSectionState extends State<SpecialSection> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Icon(Icons.account_box),
-                                  Text(
-                                    widget.item.cook,
-                                    style: AppThemeData
-                                        .appTheme.textTheme.bodyMedium,
+                                  const Icon(Icons.account_box,
+                                      color: secondary),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5.0),
+                                    child: Text(
+                                      widget.item.cook,
+                                      style: AppThemeData
+                                          .appTheme.textTheme.bodyMedium,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -151,22 +157,21 @@ class _SpecialSectionState extends State<SpecialSection> {
                     Expanded(
                       child: Text(
                         widget.item.name,
-                        style: AppThemeData.appTheme.textTheme.titleMedium,
+                        style: AppThemeData.appTheme.textTheme.titleLarge!
+                            .copyWith(fontSize: 33),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    Expanded(
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              widget.item.stars.toString(),
-                              style:
-                                  AppThemeData.appTheme.textTheme.titleMedium,
-                            ),
-                            ReviewStars(star: widget.item.stars)
-                          ]),
-                    )
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            widget.item.stars.toString(),
+                            style: AppThemeData.appTheme.textTheme.labelMedium!,
+                          ),
+                          ReviewStars(star: widget.item.stars)
+                        ])
                   ],
                 ),
                 subtitle: Padding(
@@ -177,7 +182,7 @@ class _SpecialSectionState extends State<SpecialSection> {
                     children: [
                       IconLabelPair(
                         icon: Icons.timer_outlined,
-                        label: widget.item.time,
+                        label: '${widget.item.time} minutes',
                       ),
                       IconLabelPair(
                         icon: Icons.people_outline_outlined,

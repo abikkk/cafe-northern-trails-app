@@ -1,3 +1,4 @@
+import 'package:Cafe_Northern_Trails/utils/app_colors.dart';
 import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 
@@ -25,17 +26,23 @@ class _InkwellOptionsState extends State<InkwellOptions> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color:
-              widget.isSelected ?  AppThemeData.appTheme.primaryColor : Colors.transparent,
-          border: Border.all(width: 1, color: AppThemeData.appTheme.primaryColor),
+              widget.isSelected ? AppThemeData.appTheme.primaryColor : tertiary,
+          border:
+              Border.all(width: 1, color: AppThemeData.appTheme.primaryColor),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
-        child: Text(
-          widget.label,
-          style: TextStyle(
-              color: widget.isSelected ? Colors.white : AppThemeData.appTheme.primaryColor,
+        child: Text(widget.label,
+            style: AppThemeData.appTheme.textTheme.bodyLarge!.copyWith(
+              color: widget.isSelected
+                  ? Colors.white
+                  : AppThemeData.appTheme.primaryColor,
               fontWeight: FontWeight.bold,
-              fontSize: 14),
-        ),
+            )
+            // TextStyle(
+            //     color: widget.isSelected ? Colors.white : AppThemeData.appTheme.primaryColor,
+            //     fontWeight: FontWeight.bold,
+            //     fontSize: 14),
+            ),
       ),
     );
   }
