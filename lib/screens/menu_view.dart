@@ -1,24 +1,28 @@
-import 'package:Cafe_Northern_Trails/models/menu_item.dart';
+import 'package:Cafe_Northern_Trails/controllers/main_controller.dart';
 import 'package:Cafe_Northern_Trails/ui_helpers/featured_section.dart';
 import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MenuView extends StatelessWidget {
-  const MenuView({super.key, required this.items});
+  MenuView({
+    super.key,required this.mainController
+  });
 
-  final List<MenuItem> items;
+  final MainController mainController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Menu'),
-      ),
+          title: Text('Menu',
+              style: AppThemeData.appTheme.textTheme.displayLarge!
+                  .copyWith(color: Colors.white))),
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: ListView(
             children: [
-              for (int i = 0; i < items.length; i++)
+              for (int i = 0; i < mainController.items.length; i++)
                 InkWell(
                   onTap: () {
                     Get.bottomSheet(
@@ -32,7 +36,9 @@ class MenuView extends StatelessWidget {
                           color: AppThemeData.appTheme.primaryColor,
                         ),
                         child: Wrap(
-                          children: [SpecialSection(item: items[i])],
+                          children: [
+                            SpecialSection(item: mainController.items[i])
+                          ],
                         ),
                       ),
                       barrierColor: Colors.white54,
@@ -41,10 +47,12 @@ class MenuView extends StatelessWidget {
                   },
                   child: ListTile(
                     minLeadingWidth: 100,
-                    leading: Image.asset('assets/${items[i].imagePath}'),
-                    title: Text(items[i].name),
-                    subtitle: Text('${items[i].time} minutes'),
-                    trailing: Text('\$ ${items[i].price.toString()}'),
+                    leading: Image.asset(
+                        'assets/${mainController.items[i].imagePath}'),
+                    title: Text(mainController.items[i].name),
+                    subtitle: Text('${mainController.items[i].time} minutes'),
+                    trailing:
+                        Text('\$ ${mainController.items[i].price.toString()}'),
                   ),
                 )
             ],

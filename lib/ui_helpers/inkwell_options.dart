@@ -38,10 +38,6 @@ class _InkwellOptionsState extends State<InkwellOptions> {
                   : AppThemeData.appTheme.primaryColor,
               fontWeight: FontWeight.bold,
             )
-            // TextStyle(
-            //     color: widget.isSelected ? Colors.white : AppThemeData.appTheme.primaryColor,
-            //     fontWeight: FontWeight.bold,
-            //     fontSize: 14),
             ),
       ),
     );
