@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: StringUtils.routeHome,
           page: () => HomeView(
-              title: 'Northern Trails,',
-              subtitle: 'welcome',
+              title: 'Northern Trails',
+              subtitle: 'Welcome',
               mainController: mainController),
         ),
         GetPage(

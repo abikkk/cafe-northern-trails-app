@@ -37,6 +37,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawerEnableOpenDragGesture: true,
+
       endDrawer: const EndDrawer(),
       body: CustomScrollView(
         shrinkWrap: true,
@@ -45,9 +47,10 @@ class _HomeViewState extends State<HomeView> {
             title: widget.title,
             subtitle: widget.subtitle,
           ),
-          SliverList(delegate: SliverChildBuilderDelegate((_, int index) {
+          SliverList(
+              delegate: SliverChildBuilderDelegate((_, int index) {
             return HomeBody(mainController: mainController);
-          }))
+          }, childCount: 1))
         ],
       ),
 

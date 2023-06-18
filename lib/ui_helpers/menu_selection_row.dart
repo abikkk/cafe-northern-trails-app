@@ -12,9 +12,6 @@ class MenuSelectionRow extends StatefulWidget {
 }
 
 class _MenuSelectionRowState extends State<MenuSelectionRow> {
-  // int courseSelection = 0, navSelection = 0;
-  // List<MenuItem> items = [], filteredItems = [];
-
   @override
   Widget build(BuildContext context) {
     return // COURSE SELECTION SECTION
@@ -27,7 +24,8 @@ class _MenuSelectionRowState extends State<MenuSelectionRow> {
               setState(() {
                 widget.mainController.courseSelection.value = 0;
               });
-              widget.mainController.filteredItems = widget.mainController.items;
+              widget.mainController.filteredItems.value =
+                  widget.mainController.items;
             },
             isSelected: widget.mainController.courseSelection.value == 0),
         InkwellOptions(
