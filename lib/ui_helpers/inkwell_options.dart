@@ -1,6 +1,6 @@
-import 'package:Cafe_Northern_Trails/utils/app_colors.dart';
-import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
+import '../utils/app_colors.dart';
+import '../utils/app_theme_data.dart';
 
 class InkwellOptions extends StatefulWidget {
   const InkwellOptions(

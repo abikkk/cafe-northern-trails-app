@@ -110,7 +110,7 @@ class MainController extends GetxController {
             isSpecials: false,
             isPopular: true,
             isNewest: false,
-            isMilkBased: true,
+            isMilkBased: false,
             isCocktail: false,
             hasAlcohol: false)),
         (MenuItem(

@@ -1,28 +1,31 @@
-import 'package:Cafe_Northern_Trails/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'app_colors.dart';
 
 class AppThemeData {
-
   static ThemeData appTheme = ThemeData(
-    primarySwatch: primary,
-    iconTheme: const IconThemeData(color: primary),
-    primaryIconTheme: const IconThemeData(color: secondary),
+    primarySwatch: secondary,
+    scaffoldBackgroundColor: primary,
+    iconTheme: const IconThemeData(color: tertiaryAccent),
+    primaryIconTheme: const IconThemeData(color: tertiary),
+    appBarTheme: AppBarTheme(backgroundColor: primary),
+    cardColor:         Colors.grey.shade300.withOpacity(0.3),
+
     // iconButtonTheme:
     //     IconButtonThemeData(style: ButtonStyle(iconColor: Colors.blueGrey)),
     textTheme: TextTheme(
-      bodySmall: GoogleFonts.comfortaa(fontSize: 10,color:Colors.grey[700]),
-      bodyMedium: GoogleFonts.comfortaa(fontSize: 12,color:Colors.grey[700]),
-      bodyLarge: GoogleFonts.comfortaa(fontSize: 14,color:Colors.grey[700]),
-      labelLarge: GoogleFonts.parisienne(fontSize: 10,color:Colors.grey[700]),
-      labelSmall: GoogleFonts.parisienne(fontSize: 12,color:Colors.grey[700]),
-      labelMedium: GoogleFonts.parisienne(fontSize: 14,color:Colors.grey[700]),
-      displaySmall: GoogleFonts.comfortaa(fontSize: 16,color:Colors.grey[700]),
-      displayMedium: GoogleFonts.comfortaa(fontSize: 18,color:Colors.grey[700]),
-      displayLarge: GoogleFonts.comfortaa(fontSize: 20,color:Colors.grey[700]),
-      titleSmall: GoogleFonts.parisienne(fontSize: 16,color:Colors.grey[700]),
-      titleMedium: GoogleFonts.parisienne(fontSize: 18,color:Colors.grey[700]),
-      titleLarge: GoogleFonts.parisienne(fontSize: 20,color:Colors.grey[700]),
+      bodySmall: GoogleFonts.comfortaa(fontSize: 10, color: secondaryAccent),
+      bodyMedium: GoogleFonts.comfortaa(fontSize: 12, color: secondaryAccent),
+      bodyLarge: GoogleFonts.comfortaa(fontSize: 14, color: secondaryAccent),
+      labelLarge: GoogleFonts.parisienne(fontSize: 10, color: secondaryAccent),
+      labelSmall: GoogleFonts.parisienne(fontSize: 12, color: secondaryAccent),
+      labelMedium: GoogleFonts.parisienne(fontSize: 14, color: secondaryAccent),
+      displaySmall: GoogleFonts.comfortaa(fontSize: 16, color: secondaryAccent),
+      displayMedium: GoogleFonts.comfortaa(fontSize: 18, color: secondaryAccent),
+      displayLarge: GoogleFonts.comfortaa(fontSize: 20, color: secondaryAccent),
+      titleSmall: GoogleFonts.parisienne(fontSize: 16, color: secondaryAccent),
+      titleMedium: GoogleFonts.parisienne(fontSize: 18, color: secondaryAccent),
+      titleLarge: GoogleFonts.parisienne(fontSize: 20, color: secondaryAccent),
     ),
   );
 }

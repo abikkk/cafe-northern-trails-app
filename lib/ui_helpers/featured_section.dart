@@ -1,4 +1,4 @@
-import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
+import 'package:Cafe_Night_Trails/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import '../ui_helpers/review_stars.dart';
 import '../models/menu_item.dart';
@@ -21,6 +21,8 @@ class _SpecialSectionState extends State<SpecialSection> {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: Card(
+        // color: Colors.grey.shade300.withOpacity(0.3),
+        // shape: ShapeBor,
         elevation: 10,
         child: Column(
           children: [

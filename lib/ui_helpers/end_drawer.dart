@@ -1,6 +1,7 @@
-import 'package:Cafe_Northern_Trails/utils/string_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../utils/string_utils.dart';
 
 class EndDrawer extends StatefulWidget {
   const EndDrawer({super.key});

@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1edb048-4f0b-4b45-bdd8-edc7fc14aae7" name="Changes" comment="UI changes:&#10;- drawer added for menu and favorites&#10;- font changed&#10;- theme color changed">
+      <change afterPath="$PROJECT_DIR$/lib/utils/ui_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/main_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/main_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/contact_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/contact_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/menu_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/menu_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/card_image_small.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/card_image_small.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/end_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/end_drawer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/featured_section.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/featured_section.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/home_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/home_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/inkwell_options.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/inkwell_options.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/menu_selection_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/menu_selection_row.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui_helpers/sliver_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui_helpers/sliver_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/app_theme_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/app_theme_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.iml" beforeDir="false" afterPath="$PROJECT_DIR$/template.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,10 +70,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "A:/Documents/Own/rogue-emojis",
+    "last_opened_file_path": "A:/Documents/Own/ghar-jagga",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>

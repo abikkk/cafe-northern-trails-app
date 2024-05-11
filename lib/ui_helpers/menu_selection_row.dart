@@ -1,6 +1,7 @@
-import 'package:Cafe_Northern_Trails/controllers/main_controller.dart';
-import 'package:Cafe_Northern_Trails/ui_helpers/inkwell_options.dart';
 import 'package:flutter/material.dart';
+
+import '../controllers/main_controller.dart';
+import 'inkwell_options.dart';
 
 class MenuSelectionRow extends StatefulWidget {
   const MenuSelectionRow({super.key, required this.mainController});

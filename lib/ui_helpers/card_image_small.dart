@@ -15,6 +15,7 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      // color: AppThemeData.appTheme.primaryColor.withOpacity(0.7),
       elevation: 10,
       child: Container(
         margin: const EdgeInsets.all(10),
@@ -68,13 +69,14 @@ class _SmallCardImageStackState extends State<SmallCardImageStack> {
                             overflow: TextOverflow.ellipsis,
                             style: AppThemeData.appTheme.textTheme.bodyLarge),
                         Padding(
-                          padding: const EdgeInsets.only(top:4.0,bottom: 2),
-                          child: Text('\$ ${widget.item.price.toStringAsFixed(2)}',
+                          padding: const EdgeInsets.only(top: 4.0, bottom: 2),
+                          child: Text(
+                              '\$ ${widget.item.price.toStringAsFixed(2)}',
                               style: AppThemeData.appTheme.textTheme.bodyLarge),
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.white24,
                             border:
                                 Border.all(width: 1, color: Colors.transparent),
                             borderRadius:

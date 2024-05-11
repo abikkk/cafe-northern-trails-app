@@ -1,14 +1,10 @@
-import 'package:Cafe_Northern_Trails/controllers/main_controller.dart';
-import 'package:Cafe_Northern_Trails/ui_helpers/end_drawer.dart';
-import 'package:Cafe_Northern_Trails/ui_helpers/home_body.dart';
-import 'package:Cafe_Northern_Trails/ui_helpers/menu_selection_row.dart';
-import 'package:Cafe_Northern_Trails/ui_helpers/sliver_app_bar.dart';
-import 'package:Cafe_Northern_Trails/utils/app_theme_data.dart';
-import 'package:Cafe_Northern_Trails/utils/string_utils.dart';
+import 'package:Cafe_Night_Trails/controllers/main_controller.dart';
+import 'package:Cafe_Night_Trails/ui_helpers/end_drawer.dart';
+import 'package:Cafe_Night_Trails/ui_helpers/home_body.dart';
+import 'package:Cafe_Night_Trails/ui_helpers/sliver_app_bar.dart';
+import 'package:Cafe_Night_Trails/utils/string_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../ui_helpers/featured_section.dart';
-import '../ui_helpers/card_image_small.dart';
 import '../ui_helpers/navbar.dart';
 
 class HomeView extends StatefulWidget {
@@ -27,6 +23,8 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   late MainController mainController;
+  // GlobalKey<ScaffoldState> globalKey=GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -37,8 +35,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawerEnableOpenDragGesture: true,
-
+      // key: globalKey,
       endDrawer: const EndDrawer(),
       body: CustomScrollView(
         shrinkWrap: true,
@@ -46,6 +43,7 @@ class _HomeViewState extends State<HomeView> {
           CustomSliverAppBar(
             title: widget.title,
             subtitle: widget.subtitle,
+            // homeContext: context,
           ),
           SliverList(
               delegate: SliverChildBuilderDelegate((_, int index) {

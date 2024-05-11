@@ -8,8 +8,8 @@ import 'featured_section.dart';
 import 'menu_selection_row.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key,required this.mainController});
-  
+  const HomeBody({super.key, required this.mainController});
+
   final MainController mainController;
 
   @override
@@ -51,7 +51,10 @@ class HomeBody extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     Get.toNamed(StringUtils.routeMenu,
-                        arguments: mainController.items);
+                            arguments: mainController.items)!
+                        .whenComplete(() {
+                          
+                        });
                   },
                   child: const Text(
                     'See all',
